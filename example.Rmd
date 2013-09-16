@@ -11,7 +11,7 @@ dat <- data.frame(party=c("CDU", "FDP", "CSU", "SPD",
 ```
 
 Make a pie plot
-```{r pie}
+```{r pie, echo=FALSE}
 pie(dat$members.of.parliament, labels=dat$party)
 ```
 
@@ -38,4 +38,4 @@ doughnut <- gvisPieChart(dat,
 plot(doughnut)
 ```
 
-
+Here is some code `r print(dat)`
