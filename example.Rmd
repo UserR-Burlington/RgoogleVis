@@ -1,0 +1,43 @@
+Welcome to Burlington UserR!
+========================================================
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
+
+When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+
+Make a [doughnut plot](http://www.r-bloggers.com/doughnut-chart-in-r-with-googlevis/)
+
+```{r doughnut}
+dat <- data.frame(party=c("CDU", "FDP", "CSU", "SPD",
+                          "The Left", "The Greens"),
+                  members.of.parliament=c(193, 93, 44, 
+                                          146, 76, 68))
+library(googleVis)
+## Doughnut chart - a pie with a hole
+doughnut <- gvisPieChart(dat, 
+                      options=list(
+                        width=500,
+                        height=500,
+                        slices="{0: {offset: 0.2},
+                          1: {offset: 0.2},
+                          2: {offset: 0.2}}",
+                        title='German parliament 2009 - 2013 
+                        (Goverment: CDU/FDP/CSU)',
+                        legend='none',
+                        colors="['black','orange', 'blue', 
+                        'red', 'purple', 'green']",
+                        pieSliceText='label',
+                        pieHole=0.5),
+                      chartid="doughnut")
+plot(doughnut)
+```
