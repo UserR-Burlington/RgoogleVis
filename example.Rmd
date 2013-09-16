@@ -1,20 +1,6 @@
 Welcome to Burlington UserR!
 ========================================================
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
-
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r}
-summary(cars)
-```
-
-You can also embed plots, for example:
-
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
-
 Make a [doughnut plot](http://www.r-bloggers.com/doughnut-chart-in-r-with-googlevis/)
 
 ```{r doughnut}
@@ -22,6 +8,16 @@ dat <- data.frame(party=c("CDU", "FDP", "CSU", "SPD",
                           "The Left", "The Greens"),
                   members.of.parliament=c(193, 93, 44, 
                                           146, 76, 68))
+```
+
+Make a pie plot
+```{r pie}
+pie(dat$members.of.parliament, labels=dat$party)
+```
+
+Make a snazzy Google plot
+
+```{r googleVis}
 library(googleVis)
 ## Doughnut chart - a pie with a hole
 doughnut <- gvisPieChart(dat, 
@@ -41,3 +37,5 @@ doughnut <- gvisPieChart(dat,
                       chartid="doughnut")
 plot(doughnut)
 ```
+
+
