@@ -11,6 +11,7 @@ dat <- data.frame(party=c("CDU", "FDP", "CSU", "SPD",
 ```
 
 Make a pie plot
+
 ```{r pie, echo=FALSE}
 pie(dat$members.of.parliament, labels=dat$party)
 ```
